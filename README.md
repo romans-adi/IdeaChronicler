@@ -1,3 +1,11 @@
+<!-- PROJECT DESCRIPTION -->
+
+<img src="idch-logo.png" alt="idea-chronicler-logo" />
+
+# <a name="about-project"> Idea Chronicler </a>
+
+The "Idea Chronicler" project is a blog application that serves as a classic example of a blog website. This fully functional website allows users to explore a list of posts and actively engage with them by leaving comments and liking posts. The application's primary goal is to provide a platform where users can share ideas, insights, and opinions through written content and interact with other users' posts.
+
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
@@ -15,13 +23,6 @@
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
 
-<!-- PROJECT DESCRIPTION -->
-
-<img src="idch-logo.png" alt="idea-chronicler-logo" />
-
-# <a name="about-project"> Idea Chronicler </a>
-
-The "Idea Chronicler" project is a blog application that serves as a classic example of a blog website. This fully functional website allows users to explore a list of posts and actively engage with them by leaving comments and liking posts. The application's primary goal is to provide a platform where users can share ideas, insights, and opinions through written content and interact with other users' posts.
 
 <!-- Features -->
 
