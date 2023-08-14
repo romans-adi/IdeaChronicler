@@ -4,12 +4,11 @@ class CreatePosts < ActiveRecord::Migration[7.0]
       t.integer :author_id
       t.string :title
       t.text :text
-      t.datetime :created_at
-      t.datetime :updated_at
       t.integer :comments_counter
       t.integer :likes_counter
-
       t.timestamps
     end
+
+    add_foreign_key :posts, :users, column: :author_id
   end
 end
