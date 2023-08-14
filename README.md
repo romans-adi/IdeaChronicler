@@ -1,6 +1,8 @@
 <!-- PROJECT DESCRIPTION -->
 
+<p align="center">
 <img src="idch-logo.png" alt="idea-chronicler-logo" />
+</p>
 
 # <a name="about-project"> Idea Chronicler </a>
 
