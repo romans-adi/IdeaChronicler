@@ -130,7 +130,7 @@ rails server
 
 4. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
-### :heavy_check_mark: Tests<a name="tests"></a>
+### Tests :heavy_check_mark:<a name="tests"></a>
 
 To run the tests for the Solver class, ensure you are in the directory containing the test files.
 
