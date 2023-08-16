@@ -128,9 +128,9 @@ rails server
 
 <!-- AUTHORS -->
 
-## Authors <a name="authors"></a>
+## 🖋️ Authors<a name="authors"></a>
 
-🖋️ **Romans S.**
+  🧑‍🦲 **Romans Š.**
 
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
 - Twitter: [@obj583](https://twitter.com/obj583/)
