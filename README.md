@@ -12,25 +12,33 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 
 ## Table of Contents
 
-- [Tech Stack](#tech-stack)
-  - [Key Features](#key-features)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Setup](#setup)
-  - [Usage](#usage)
-- [Authors](#authors)
-- [Future Features](#future-features)
-- [Contributing](#contributing)
-- [Support](#support)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
+- [Tech Stack](#tech-stack) 🛠️
+- [Key Features](#key-features) ✨
+- [Getting Started](#getting-started) 🚀
+  - [Setup](#setup) 🔧
+  - [Installation](#installation) ⚙️
+  - [Usage](#usage) 🧰
+- [Authors](#authors) 🖋️
+- [Future Features](#future-features) 🌟
+- [Contributing](#contributing) 🤝
+- [Support](#support) 🆘
+- [Acknowledgments](#acknowledgments) 🙏
+- [License](#license) 📄
 
+<!-- TECH STACK -->
 
-<!-- Features -->
+## Tech Stack 🛠️ <a name="tech-stack"></a>
 
-## Features <a name="features"></a>
+  <ul>
+     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+     <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
+  </ul>
 
-### Key Features <a name="key-features"></a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FEATURES -->
+
+## ✨ Key Features<a name="key-features"></a>
 
 - [x] Created four main models: User, Post, Comment, and Like, following the ERD diagram.
 - [x] Set up associations between models, including one-to-many and many-to-one relationships.
@@ -42,22 +50,11 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- TECH STACK -->
-
-## Tech Stack <a name="tech-stack"></a>
-
-  <ul>
-     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-     <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
-  </ul>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
-## Getting Started <a name="getting-started"></a>
+## 🚀 Getting Started<a name="getting-started"></a>
 
-### Setup <a name="setup"></a>
+### 🔧 Setup<a name="setup"></a>
 
 1. Ensure you have Ruby installed on your system. You can check your Ruby version in the terminal by running:
 
@@ -92,7 +89,7 @@ You can also create the new directory just adding the name of it in the end of c
 
 > git clone https://github.com/romans-adi/IdeaChronicler.git IdeaChronicler
 
-### Installation <a name="installation"></a>
+### ⚙️ Installation<a name="installation"></a>
 
 To run this project locally, follow these steps:
 
@@ -103,7 +100,7 @@ To run this project locally, follow these steps:
 3. Run the following command to install any required dependencies:
 ```bundle install```
 
-### Usage <a name="usage"></a>
+### 🧰 Usage<a name="usage"></a>
 
 1. Once the setup is complete, ensure you are still in the directory containing the IdeaChronicler files.
 
@@ -119,7 +116,7 @@ To run this project locally, follow these steps:
 
 ## Authors <a name="authors"></a>
 
-**Romans S.**
+🖋️ **Romans S.**
 
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
 - Twitter: [@obj583](https://twitter.com/obj583/)
@@ -127,7 +124,7 @@ To run this project locally, follow these steps:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Future Features <a name="future-features"></a>
+### 🌟 Future Features <a name="future-features"></a>
 
 - [ ] Implement data validations for models and write tests to ensure data integrity.
 - [ ] Add model methods to process data and write tests to validate their functionality.
@@ -144,7 +141,7 @@ To run this project locally, follow these steps:
 
 <!-- CONTRIBUTING -->
 
-## Contributing <a name="contributing"></a>
+## 🤝 Contributing <a name="contributing"></a>
 
 I welcome contributions to enhance the functionality and user experience of the IdeaChronicler Application. If you have any ideas, suggestions, or bug reports, feel free to open an issue or submit a pull request. Let's share ideas!
 
@@ -164,7 +161,7 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-## Support <a name="support"></a>
+## 🆘 Support <a name="support"></a>
 
 If you encounter any issues or have any questions or suggestions, please open an issue on the [issue tracker](../../../issues/).
 Furthermore, if you would like to get in touch with me, you can find our contact information in the <a href="#authors">Authors</a> section.
@@ -173,15 +170,17 @@ Furthermore, if you would like to get in touch with me, you can find our contact
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## Acknowledgements <a name="acknowledgments"></a>
+## 🙏 Acknowledgements <a name="acknowledgments"></a>
 
 I would like to thank the following individuals and projects for their contributions and inspiration:
 
 [Ruby official](https://www.ruby-lang.org/) :  Special thanks to Yukihiro Matsumoto, the creator of the Ruby programming language, for giving me this powerful and elegant tool to build amazing applications. I am also grateful to the Ruby Core Team and the passionate Ruby community for their continuous support and contributions.
 
+[Ruby on Rails](https://rubyonrails.org/): A big thank you to the creators, contributors, and maintainers of the Ruby on Rails framework. Your efforts have empowered countless developers to build powerful and scalable web applications.
+
 <!-- LICENSE -->
 
-## License <a name="license"></a>
+## 📄 License <a name="license"></a>
 
 This project is [MIT](LICENSE) licensed.
 
