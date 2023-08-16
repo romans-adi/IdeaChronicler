@@ -18,6 +18,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   - [Setup](#setup) 🔧
   - [Installation](#installation) ⚙️
   - [Usage](#usage) 🧰
+  - [Tests](#tests) :heavy_check_mark:
 - [Authors](#authors) 🖋️
 - [Future Features](#future-features) 🌟
 - [Contributing](#contributing) 🤝
@@ -32,6 +33,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   <ul>
      <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
      <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
+     <li><a href="https://rspec.info/">RSpec</a></li>
   </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -40,13 +42,15 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 
 ## ✨ Key Features<a name="key-features"></a>
 
-- [x] Created four main models: User, Post, Comment, and Like, following the ERD diagram.
-- [x] Set up associations between models, including one-to-many and many-to-one relationships.
+- [x] Four main models: User, Post, Comment, and Like, following the ERD diagram.
+- [x] Associations between models, including one-to-many and many-to-one relationships.
 - [x] Generated corresponding migration files for each model with appropriate attributes.
 - [x] Added foreign keys and indexes to ensure data integrity and optimize database queries.
 - [x] Utilized timestamps for tracking creation and update times automatically.
 - [x] Followed naming conventions for models, tables, and columns as per Rails standards.
 - [x] Generated migration files to create necessary tables, columns, and associations.
+- [x] Data validations and tests for models to ensure data integrity.
+- [x] Model methods to process data and tests to validate their functionality.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,6 +116,46 @@ To run this project locally, follow these steps:
 
 4. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
+### :heavy_check_mark: Tests<a name="tests"></a>
+
+To run the tests for the Solver class, ensure you are in the directory containing the test files.
+
+1. Install RSpec:
+
+Find your gemfile and add the RSpec gem in the development, test group:
+
+```
+group :development, :test do
+  gem 'rspec-rails'
+end
+```
+
+2. Then in your terminal run the command:
+
+```
+bundle install
+```
+
+3. To set up RSpec in your app and create the Spec folder run:
+
+```
+rails generate rspec:install
+```
+
+4. Run the tests for all the models using the following command:
+
+```
+rspec spec/models
+```
+
+5. Alternatively, you could run tests for any specific suit using the following command (an example for Like model):
+
+```
+rspec spec/models/like_spec.rb
+```
+
+6. All tests should pass without any errors or failures, ensuring that all models and their methods are functioning correctly.
+
 <!-- AUTHORS -->
 
 ## Authors <a name="authors"></a>
@@ -126,8 +170,6 @@ To run this project locally, follow these steps:
 
 ### 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Implement data validations for models and write tests to ensure data integrity.
-- [ ] Add model methods to process data and write tests to validate their functionality.
 - [ ] Set up CRUD actions in controllers for managing model instances.
 - [ ] Write tests to verify the behavior of controller actions and responses.
 - [ ] Create view templates to render data and user interfaces.
