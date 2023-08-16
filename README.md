@@ -58,37 +58,49 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 
 1. Ensure you have Ruby installed on your system. You can check your Ruby version in the terminal by running:
 
-```ruby -v```
+```
+ruby -v
+```
 
 If Ruby is not installed, you can download and install it from the official Ruby website.
 
 2. Ensure you have Ruby on Rails (RoR) installed on your system. You can check your Rails version in the terminal by running:
 
-```rails -v```
+```
+rails -v
+```
 
 If Rails is not installed, you can install it using the following command:
 
-```gem install rails```
+```
+gem install rails
+```
 
 3. To get a local copy up and running, follow these steps.
 Choose the directory on your local machine where you want to copy project. For example:
 
-> cd /home/user/name-of-your-directory
+```
+cd /home/user/name-of-your-directory
+```
 
 Clone the project using one of the options.
 
 Using SSH-key:
 
-> git clone git@github.com:romans-adi/IdeaChronicler.git
-
+```
+git clone git@github.com:romans-adi/IdeaChronicler.git
+```
 Using HTTPS:
 
-> git clone https://github.com/romans-adi/IdeaChronicler.git
+```
+git clone https://github.com/romans-adi/IdeaChronicler.git
+```
 
 You can also create the new directory just adding the name of it in the end of command. For example:
 
-> git clone https://github.com/romans-adi/IdeaChronicler.git IdeaChronicler
-
+```
+git clone https://github.com/romans-adi/IdeaChronicler.git IdeaChronicler
+```
 ### ⚙️ Installation<a name="installation"></a>
 
 To run this project locally, follow these steps:
@@ -106,7 +118,9 @@ To run this project locally, follow these steps:
 
 2. To run the app, execute the following command:
 
-```rails server```
+```
+rails server
+```
 
 3. The app will be accessible at `http://localhost:3000` in your web browser.
 
@@ -170,7 +184,7 @@ Furthermore, if you would like to get in touch with me, you can find our contact
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## 🙏 Acknowledgements <a name="acknowledgments"></a>
+## 🌲 Acknowledgements <a name="acknowledgments"></a>
 
 I would like to thank the following individuals and projects for their contributions and inspiration:
 
