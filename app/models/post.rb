@@ -7,11 +7,11 @@ class Post < ApplicationRecord
   before_destroy :update_user_posts_counter_before_destroy
 
   def update_user_posts_counter
-    user.increment!(:posts_counter)
+    author.increment!(:posts_counter)
   end
 
   def update_user_posts_counter_before_destroy
-    user.decrement!(:posts_counter)
+    author.decrement!(:posts_counter)
   end
 
   def recent_comments(limit = 5)
