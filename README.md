@@ -54,7 +54,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 
 ## 🚀 Getting Started<a name="getting-started"></a>
 
-### 🔧 Setup<a name="setup"></a>
+### Setup 🔧<a name="setup"></a>
 
 1. Ensure you have Ruby installed on your system. You can check your Ruby version in the terminal by running:
 
@@ -101,7 +101,7 @@ You can also create the new directory just adding the name of it in the end of c
 ```
 git clone https://github.com/romans-adi/IdeaChronicler.git IdeaChronicler
 ```
-### ⚙️ Installation<a name="installation"></a>
+### Installation ⚙️<a name="installation"></a>
 
 To run this project locally, follow these steps:
 
@@ -112,7 +112,7 @@ To run this project locally, follow these steps:
 3. Run the following command to install any required dependencies:
 ```bundle install```
 
-### 🧰 Usage<a name="usage"></a>
+### Usage 🧰<a name="usage"></a>
 
 1. Once the setup is complete, ensure you are still in the directory containing the IdeaChronicler files.
 
@@ -138,7 +138,7 @@ rails server
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 🌟 Future Features <a name="future-features"></a>
+## 🌟 Future Features <a name="future-features"></a>
 
 - [ ] Implement data validations for models and write tests to ensure data integrity.
 - [ ] Add model methods to process data and write tests to validate their functionality.
