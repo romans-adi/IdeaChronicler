@@ -1,0 +1,24 @@
+<h1><%= @user.name %></h1>
+<p>Number of posts: <%= @user.posts.count %></p>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h2>
+    <p><%= post.text %></p>
+    <p class="post-meta">
+      Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %>
+            Comments: <%= post.comments.count %>
+    </p>
+<div class="comments">
+      <ul>
+        <% if post.comments.any? %>
+          <% post.comments.each do |comment| %>
+            <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
+          <% end %>
+        <% else %>
+          <li>No comments yet</li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

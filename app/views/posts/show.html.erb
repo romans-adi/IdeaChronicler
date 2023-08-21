@@ -1,0 +1,19 @@
+<h1>Post #<%= @post.id %> by <%= @user.name %></h1>
+<p class="post-meta">
+  Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %>
+  Comments: <%= @post.comments.count %>
+</p>
+<p><%= @post.text %></p>
+
+<div class="comments">
+  <h3>Comments</h3>
+  <ul>
+    <% if @post.comments.any? %>
+      <% @post.comments.each do |comment| %>
+        <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
+      <% end %>
+    <% else %>
+      <li>No comments yet</li>
+    <% end %>
+  </ul>
+</div>
