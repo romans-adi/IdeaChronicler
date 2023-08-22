@@ -6,7 +6,7 @@
     <h2><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h2>
     <p><%= post.text %></p>
     <p class="post-meta">
-      Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %>
+    Likes: <%= post.likes_counter.presence || 0 %>
             Comments: <%= post.comments.count %>
     </p>
 <div class="comments">
