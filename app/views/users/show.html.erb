@@ -1,9 +1,10 @@
-<h1><%= @user.name %></h1>
-<p>Number of posts: <%= @user.posts.count %></p>
-
+<div class="containter">
+<div class="user-details">
+  <%= render partial: 'users/user_info', locals: { user: @user } %>
+  </div>
 <div class="user-bio">
-  <h2>Bio</h2>
-  <p>
+  <h2 class="bio-heading">Bio</h2>
+  <p class="bio-text">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. In odit laudantium maiores deleniti sequi id repudiandae
     perferendis. Odio molestias hic animi voluptate quae, maiores esse excepturi obcaecati illo totam minus!
     Labore velit veniam perferendis repellendus minima nostrum aliquam recusandae pariatur praesentium, quaerat sunt
@@ -12,22 +13,16 @@
     quos voluptates temporibus adipisci ea quas sunt? Odit sunt doloremque labore atque culpa voluptate nemo qui, eveniet
     molestias neque dolorum aut provident eaque libero nostrum blanditiis optio. Minima aut fugit velit nulla inventore
     qui doloribus id vitae!
-  </p>
-</div>
+   </p>
+  </div>
 
 <div class="user-posts">
-  <% @user.posts.each do |post| %>
-    <div class="post">
-      <h3>Post#<%= post.id %></h3>
-      <p><%= post.text %></p>
-      <p class="post-meta">
-        Likes: <%= post.likes_counter.presence || 0 %>
-        Comments: <%= post.comments.count %>
-      </p>
-    </div>
+  <% @user.posts.limit(3).each do |post| %>
+    <%= render partial: 'posts/post_item', locals: { post: post, user: @user } %>
   <% end %>
 
   <div class="see-all-posts">
-    <%= link_to "See All Posts", user_posts_path(@user) %>
+    <%= link_to "See All Posts", user_posts_path(@user), class: "see-more-posts" %>
   </div>
 </div>
+

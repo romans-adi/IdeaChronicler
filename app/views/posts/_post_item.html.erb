@@ -1,0 +1,8 @@
+<div class="post">
+  <h3><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h3>
+  <p><%= post.text %></p>
+  <p class="post-meta">
+    <span class="likes-count">Likes: <%= post.likes_counter.presence || 0 %></span>
+    <span class="comments-count">Comments: <%= post.comments.count %></span>
+  </p>
+</div>

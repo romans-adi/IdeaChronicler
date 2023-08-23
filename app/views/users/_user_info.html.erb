@@ -1,0 +1,7 @@
+<li class="user-item">
+  <div class="user-pic"></div>
+  <div class="user-info">
+    <h2><a href="<%= user_path(user) %>"><%= user.name %></a></h2>
+    <p><a class="post-link" href="<%= user_posts_path(user) %>"><%= pluralize(user.posts.count, 'post') %></a></p>
+  </div>
+</li>
