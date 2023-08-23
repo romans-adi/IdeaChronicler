@@ -11,17 +11,7 @@
       <%= t(:likes) %>: <%= post.likes_counter.presence || 0 %>
       <%= t(:comments) %>: <%= post.comments.count %>
     </p>
-<div class="comments list-none">
-          <ul>
-          <% if post.comments.any? %>
-            <% post.comments.limit(5).each do |comment| %>
-              <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
-            <% end %>
-          <% else %>
-      <li><%= t(:no_comments_yet) %></li>
-          <% end %>
-        </ul>
-    </div>
+  <%= render partial: 'comments', locals: { comments: post.comments } %>
   </div>
-<% end %>
+ <% end %>
 </div>
