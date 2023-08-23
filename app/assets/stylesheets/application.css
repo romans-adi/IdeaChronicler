@@ -1,12 +1,19 @@
-@import 'users/user_info';
-@import 'posts/post_item.css';
-@import 'posts/index.css';
-@import 'posts/show.css';
-@import 'users/index';
-@import 'users/show';
+/*
+ *= require_tree .
+ *= require_self
+ */
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

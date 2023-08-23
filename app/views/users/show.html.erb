@@ -1,10 +1,10 @@
-<div class="containter">
+<div class="containter flex flex-col w-4/5 mx-auto my-8">
 <div class="user-details">
   <%= render partial: 'users/user_info', locals: { user: @user } %>
   </div>
-<div class="user-bio">
-  <h2 class="bio-heading">Bio</h2>
-  <p class="bio-text">
+<div class="user-bio mx-auto my-8 flex flex-col items-center p-4 border border-black">
+<h2 class="bio-heading mb-8"><%= t(:bio) %></h2>
+  <p class="bio-text text-justify font-semibold">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. In odit laudantium maiores deleniti sequi id repudiandae
     perferendis. Odio molestias hic animi voluptate quae, maiores esse excepturi obcaecati illo totam minus!
     Labore velit veniam perferendis repellendus minima nostrum aliquam recusandae pariatur praesentium, quaerat sunt
@@ -21,8 +21,8 @@
     <%= render partial: 'posts/post_item', locals: { post: post, user: @user } %>
   <% end %>
 
-  <div class="see-all-posts">
-    <%= link_to "See All Posts", user_posts_path(@user), class: "see-more-posts" %>
+  <div class="see-all-posts mt-4 text-center">
+<%= link_to t(:see_all_posts), user_posts_path(@user), class: "see-more-posts inline-block text-base px-4 py-2 bg-white text-black font-semibold border border-black shadow-md" %>
   </div>
 </div>
 

@@ -1,19 +1,19 @@
-<div class="post-details-container">
-  <div class="post-details-header">
-    <h1 class="post-title">Post #<%= @post.id %> by <%= @user.name %></h1>
+<div class="post-details-container w-4/5 mx-auto border border-black p-4 text-center">
+  <div class="post-details-header flex justify-between items-center">
+    <h1 class="post-title"><%= t(:post_title, id: @post.id, name: @user.name) %></h1>
     <p class="post-counts">
-      Likes: <%= @post.likes_counter.presence || 0 %>
-      Comments: <%= @post.comments.count %>
+      <%= t(:likes) %>: <%= @post.likes_counter.presence || 0 %>
+      <%= t(:comments) %>: <%= @post.comments.count %>
     </p>
   </div>
 
-  <div class="post-content">
+  <div class="post-content mt-4">
     <p><%= @post.text %></p>
   </div>
 </div>
 
-<div class="comments">
-  <ul>
+<div class="comments border border-black p-4 w-4/5 mx-auto">
+  <ul class="list-none">
     <% if @post.comments.any? %>
       <% @post.comments.each do |comment| %>
         <li>
@@ -22,7 +22,7 @@
         </li>
       <% end %>
     <% else %>
-      <li>No comments yet</li>
+      <li><%= t(:no_comments_yet) %></li>
     <% end %>
   </ul>
 </div>

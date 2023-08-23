@@ -1,4 +1,4 @@
-<ul class="user-list">
+<ul class="user-list list-none my-8 flex flex-col w-4/5 mx-auto">
   <% @users.each do |user| %>
     <%= render partial: 'users/user_info', locals: { user: user } %>
   <% end %>
