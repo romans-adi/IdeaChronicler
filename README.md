@@ -19,6 +19,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   - [Installation](#installation) ⚙️
   - [Usage](#usage) 🧰
   - [Tests](#tests) :heavy_check_mark:
+  - [Troubleshooting] :nut_and_bolt:
 - [Authors](#authors) 🖋️
 - [Future Features](#future-features) 🌟
 - [Contributing](#contributing) 🤝
@@ -33,6 +34,8 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   <ul>
      <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
      <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
+     <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
+     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
      <li><a href="https://rspec.info/">RSpec</a></li>
   </ul>
 
@@ -51,6 +54,9 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Generated migration files to create necessary tables, columns, and associations.
 - [x] Data validations and tests for models to ensure data integrity.
 - [x] Model methods to process data and tests to validate their functionality.
+- [x] CRUD actions in controllers for managing model instances.
+- [x] Tests to verify the behavior of controller actions and responses.
+- [x] View templates to render data and user interfaces.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +126,25 @@ To run this project locally, follow these steps:
 
 1. Once the setup is complete, ensure you are still in the directory containing the IdeaChronicler files.
 
-2. To run the app, execute the following command:
+2. To set up the database and seed initial data, run the following commands:
+
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+This will create the database, apply migrations, and populate the database with sample data.
+
+3. To precompile assets for production deployment, execute the following command:
+
+```
+rails assets:precompile
+```
+
+Precompiling assets is essential for improved performance and loading times in a production environment.
+
+4. To run the app in development mode, execute the following command:
 
 ```
 rails server
@@ -129,6 +153,27 @@ rails server
 3. The app will be accessible at `http://localhost:3000` in your web browser.
 
 4. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
+
+### Troubleshooting :nut_and_bolt:<a name="troubleshooting"></a>
+
+If you encounter any issues related to missing assets or unexpected behavior after making changes, try the following steps:
+
+1. Delete the `tmp` directory located in the root of your project:
+
+```
+rm -rf tmp/
+```
+
+This can help clear any cached data that might be causing issues.
+
+2. Delete the `public/assets` directory:
+
+```
+rm -rf public/assets/
+```
+This ensures that any previously precompiled assets are removed, and new ones will be generated during the next precompilation.
+
+3. If problems persist, you can refer to the official [Ruby on Rails Guides](https://guides.rubyonrails.org/getting_started.html) for more troubleshooting tips and guidance.
 
 ### Tests :heavy_check_mark:<a name="tests"></a>
 
@@ -184,9 +229,6 @@ rspec spec/models/like_spec.rb
 
 ## 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Set up CRUD actions in controllers for managing model instances.
-- [ ] Write tests to verify the behavior of controller actions and responses.
-- [ ] Create view templates to render data and user interfaces.
 - [ ] Implement forms for user input and data submission.
 - [ ] Write integration tests to cover user interactions and optimize queries.
 - [ ] Integrate Devise gem for user authentication and registration.

@@ -23,24 +23,33 @@ RSpec.describe 'Controllers', type: :request do
       end
 
       it 'response body includes placeholder text' do
+        user = User.create(
+          name: 'John Smith',
+          photo: 'https://unsplash.com/photos/abcdef',
+          bio: 'Lorem lorem ipsum ipsum.',
+          posts_counter: 5
+        )
+
         get users_path
-        expect(response.body).to include('List of Users')
+        expect(response.body).to include(user.name)
       end
     end
 
     describe 'GET #show' do
+      subject { get user_path(user) }
+
       it 'returns a successful response' do
-        get user_path(user)
+        subject
         expect(response).to be_successful
       end
 
       it 'renders the show template' do
-        get user_path(user)
+        subject
         expect(response).to render_template(:show)
       end
 
       it 'includes user name in the response body' do
-        get user_path(user)
+        subject
         expect(response.body).to include(user.name)
       end
     end
@@ -80,9 +89,23 @@ RSpec.describe 'Controllers', type: :request do
       end
 
       it 'includes user name and post count in the response body' do
-        subject
+        user = User.create(
+          name: 'Vilis',
+          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+          bio: 'Teacher from Latvia.',
+          posts_counter: 23
+        )
+        Post.create(
+          author: user,
+          title: 'Hello Post',
+          text: 'Hi',
+          comments_counter: 0,
+          likes_counter: 0
+        )
+
+        get user_posts_path(user)
         expect(response.body).to include(user.name)
-        expect(response.body).to include("Number of posts: #{user.posts.count}")
+        expect(response.body).to include("#{user.posts.count} post")
       end
     end
 
@@ -100,7 +123,7 @@ RSpec.describe 'Controllers', type: :request do
       end
 
       it 'response body includes correct placeholder text' do
-        get user_post_path(user, post)
+        subject
         expect(response.body).to include("Post ##{post.id} by #{user.name}")
       end
     end

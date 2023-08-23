@@ -1,0 +1,19 @@
+.post h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-text {
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.comments-plain li {
+  list-style: none;
+}
