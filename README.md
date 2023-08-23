@@ -19,7 +19,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   - [Installation](#installation) ⚙️
   - [Usage](#usage) 🧰
   - [Tests](#tests) :heavy_check_mark:
-  - [Troubleshooting] :
+  - [Troubleshooting] :nut_and_bolt:
 - [Authors](#authors) 🖋️
 - [Future Features](#future-features) 🌟
 - [Contributing](#contributing) 🤝
@@ -154,7 +154,7 @@ rails server
 
 4. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
-### Troubleshooting :heavy_check_mark:<a name="troubleshooting"></a>
+### Troubleshooting :nut_and_bolt:<a name="troubleshooting"></a>
 
 If you encounter any issues related to missing assets or unexpected behavior after making changes, try the following steps:
 
