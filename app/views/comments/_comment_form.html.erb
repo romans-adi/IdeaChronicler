@@ -1,0 +1,10 @@
+<%= form_with(model: [@post, Comment.new], local: true, url: user_post_comments_path(@post.author, @post)) do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <div class="my-4">
+    <%= form.label :text, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_area :text, class: "w-full border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500", rows: 4 %>
+  </div>
+  <div class="flex items-center justify-center">
+    <%= form.submit "Add Comment", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>

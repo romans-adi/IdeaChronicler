@@ -1,14 +1,14 @@
-<div class="post-details-container w-4/5 mx-auto border border-black p-4">
-  <div class="post-details-header flex justify-between items-center">
-    <h1 class="post-title text-2xl text-black"><%= t(:post_title, id: @post.id, name: @user.name) %></h1>
-    <p class="post-counts">
-      <%= t(:likes) %>: <%= @post.likes_counter.presence || 0 %>
-      <%= t(:comments) %>: <%= @post.comments.count %>
-    </p>
-  </div>
-
+<div data-controller="comment-modal" class="post-details-container w-4/5 mx-auto border border-black p-4">
+    <h1 class="post-title text-2xl text-black"><%= @post.title %></h1>
   <div class="post-content mt-4 text-center">
     <p><%= @post.text %></p>
+          <%= render 'comment_modal' %>
+    <div class="post-details-header flex justify-end items-center">
+<%= link_to 'Add Comment', 'javascript:void(0);', class: "bg-gradient-to-r from-green-500 to-green-700 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 hover:no-underline font-semibold", data: { action: "click->comment-modal#toggleModal", target: "comment-modal.container" } %>
+    </div>
   </div>
-    <%= render partial: 'comments', locals: { comments: @post.comments } %>
+<div id="comments" data-turbo-frame>
+  <%= render partial: 'comments', locals: { comments: @post.comments } %>
+</div>
+</div>
 </div>

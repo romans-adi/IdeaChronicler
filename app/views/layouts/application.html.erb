@@ -8,12 +8,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
   <%= stylesheet_link_tag 'application' %>
     <%= javascript_importmap_tags %>
-  </head>
+        <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module" %>
+      </head>
 
   <body>
+<% flash.each do |key, message| %>
+  <div class="p-4 flex flex-col items-center my-4 rounded-lg
+              <% case key.to_s %>
+                <% when 'success' %>
+                  bg-green-500 text-white
+                <% when 'error' %>
+                  bg-red-500 text-white
+                <% else %>
+                  bg-gray-300 text-gray-700
+              <% end %>">
+    <%= message %>
+  </div>
+<% end %>
     <%= render 'layouts/header' %>
     <%= yield %>
   </body>
