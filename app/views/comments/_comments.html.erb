@@ -1,0 +1,14 @@
+<div class="comments flex flex-start text-left py-4 mb-4 w-4/5 text-white">
+  <ul class="list-none">
+    <% if @post.comments.any? %>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <strong><%= comment.author.name %>:</strong>
+          <%= comment.text %>
+        </li>
+      <% end %>
+    <% else %>
+      <li><%= t(:no_comments_yet) %></li>
+    <% end %>
+  </ul>
+</div>

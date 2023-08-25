@@ -1,0 +1,8 @@
+<div id="custom-comment-modal" data-modal-target="container" class="hidden fixed inset-0 overflow-y-auto flex items-center justify-center z-50">
+  <div class="fixed top-0 left-0 w-full h-full bg-black opacity-50" data-action="click->comment-modal#closeModal"></div>
+  <div class="max-h-screen h-2/6 w-2/6 relative p-4 bg-stone-500 bg-opacity-90 rounded-lg shadow-2xl shadow-stone-500">
+      <div class="flex justify-between items-center">
+      </div>
+    <%= render partial: 'comments/comment_form', locals: { post: @post } %>
+  </div>
+</div>

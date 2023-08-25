@@ -19,7 +19,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   - [Installation](#installation) ⚙️
   - [Usage](#usage) 🧰
   - [Tests](#tests) :heavy_check_mark:
-  - [Troubleshooting] :nut_and_bolt:
+  - [Troubleshooting](#troubleshooting) :nut_and_bolt:
 - [Authors](#authors) 🖋️
 - [Future Features](#future-features) 🌟
 - [Contributing](#contributing) 🤝
@@ -57,6 +57,8 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] CRUD actions in controllers for managing model instances.
 - [x] Tests to verify the behavior of controller actions and responses.
 - [x] View templates to render data and user interfaces.
+- [x] Implemented forms for user input and data submission.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -229,7 +231,6 @@ rspec spec/models/like_spec.rb
 
 ## 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Implement forms for user input and data submission.
 - [ ] Write integration tests to cover user interactions and optimize queries.
 - [ ] Integrate Devise gem for user authentication and registration.
 - [ ] Create API endpoints to expose data for external use.

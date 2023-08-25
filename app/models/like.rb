@@ -1,15 +1,18 @@
 class Like < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :post
+  validates :author_id, uniqueness: { scope: :post_id }
 
-  after_create :update_post_likes_counter
-  before_destroy :update_post_likes_counter_before_destroy
+  after_create :increment_post_likes_counter
+  before_destroy :decrement_post_likes_counter
 
-  def update_post_likes_counter
+  private
+
+  def increment_post_likes_counter
     post.increment!(:likes_counter)
   end
 
-  def update_post_likes_counter_before_destroy
+  def decrement_post_likes_counter
     post.decrement!(:likes_counter)
   end
 end

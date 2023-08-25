@@ -4,5 +4,39 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
-  }
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-stimulus-components": "^4.0.4"
+  },
+  "name": "chronicler",
+  "description": "The \"Idea Chronicler\" project is a fully functional blog application that enables users to view and interact with posts by leaving comments and liking content. It serves as a platform for users to share ideas and engage in discussions through written content.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "rspec"
+  },
+  "repository": "git+https://github.com/romans-adi/IdeaChronicler.git",
+  "keywords": [
+    "rails",
+    "blog",
+    "postgresql",
+    "ruby",
+    "rspec",
+    "mvc"
+  ],
+  "author": "Romans S.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romans-adi/IdeaChronicler/issues"
+  },
+  "homepage": "https://github.com/romans-adi/IdeaChronicler#readme",
+  "private": false
 }

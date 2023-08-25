@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pagination {
+  .page-link {
+    @apply text-gray-600 hover:text-gray-800 transition duration-300;
+  }
+
+  .page-link:hover {
+    @apply text-green-800;
+  }
+
+  .page-item {
+    @apply inline-block px-3 py-2 rounded-lg shadow-sm;
+  }
+
+  .current {
+    @apply text-red-800 font-semibold;
+  }
+}
