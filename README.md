@@ -19,7 +19,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   - [Installation](#installation) ⚙️
   - [Usage](#usage) 🧰
   - [Tests](#tests) :heavy_check_mark:
-  - [Troubleshooting] :nut_and_bolt:
+  - [Troubleshooting](#troubleshooting) :nut_and_bolt:
 - [Authors](#authors) 🖋️
 - [Future Features](#future-features) 🌟
 - [Contributing](#contributing) 🤝
