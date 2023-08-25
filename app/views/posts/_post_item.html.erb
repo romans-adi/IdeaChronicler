@@ -1,7 +1,7 @@
-<div class="post mb-4 p-4 border border-black">
-  <h3><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h3>
-  <p><%= post.text %></p>
-  <p class="post-meta flex justify-end items-end">
+<div class="post mb-4 p-4 border border-stone-800 bg-stone-600 rounded-lg">
+  <h3 class="font-semibold text-white"><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h3>
+  <p class="text-white"><%= post.text %></p>
+  <p class="post-meta flex justify-end items-end text-white">
 <span class="likes-count mr-2"><%= t(:likes) %>: <%= post.likes_counter.presence || 0 %></span>
 <span class="comments-count mr-2"><%= t(:comments) %>: <%= post.comments.count %></span>
   </p>

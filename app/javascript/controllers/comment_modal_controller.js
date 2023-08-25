@@ -1,4 +1,4 @@
-import { Controller } from "stimulus";
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ['container'];
@@ -8,24 +8,30 @@ export default class extends Controller {
   }
 
   disconnect() {
-    this.close();
+    this.closeModal(null);
   }
 
-  open() {
+  openModal() {
     document.body.classList.add('overflow-hidden');
     this.containerTarget.classList.remove(this.toggleClass);
-        console.log('suka')
   }
 
-  close() {
-    if (typeof event !== 'undefined') {
+  closeModal(event) {
+    if (event) {
       event.preventDefault();
     }
-    this.containerTarget.classList.add(this.toggleClass);
     document.body.classList.remove('overflow-hidden');
+    const modal = document.getElementById('custom-comment-modal');
+    modal.classList.add('hidden');
   }
 
-  toggleModal() {
-    this.containerTarget.classList.toggle(this.toggleClass);
+  toggleCommentModal() {
+    const container = event.currentTarget.closest('[data-controller="comment-modal"]');
+    const modalContainer = container.querySelector('[data-modal-target="container"]');
+    if (modalContainer) {
+      modalContainer.classList.toggle(this.toggleClass);
+    }
   }
+
 }
+

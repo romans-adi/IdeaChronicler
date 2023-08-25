@@ -1,7 +1,7 @@
-<div class="comments p-4 w-4/5">
+<div class="comments flex flex-start text-left py-4 mb-4 w-4/5 text-white">
   <ul class="list-none">
-    <% if comments.any? %>
-      <% comments.each do |comment| %>
+    <% if @post.comments.any? %>
+      <% @post.comments.each do |comment| %>
         <li>
           <strong><%= comment.author.name %>:</strong>
           <%= comment.text %>

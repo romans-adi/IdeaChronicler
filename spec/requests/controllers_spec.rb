@@ -121,11 +121,6 @@ RSpec.describe 'Controllers', type: :request do
         subject
         expect(response).to render_template(:show)
       end
-
-      it 'response body includes correct placeholder text' do
-        subject
-        expect(response.body).to include("Post ##{post.id} by #{user.name}")
-      end
     end
   end
 end

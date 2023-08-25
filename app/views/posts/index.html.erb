@@ -7,21 +7,21 @@
   <div class="mx-auto mt-8 w-full">
     <div class="flex justify-between items-baseline mb-6" data-controller="modal">
       <%= render 'modal' %>
-      <h1 class="text-3xl text-gray-900">Posts</h1>
+      <h1 class="p-4 text-3xl text-gray-900">All Posts</h1>
 <%= link_to 'New Post', 'javascript:void(0);', class: "bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 hover:no-underline font-semibold", data: { action: "click->modal#toggleModal", target: "modal.container" } %>
 
     </div>
 
       <% @posts.each do |post| %>
-        <div class="post mb-4 p-4 border w-full border-black">
+        <div class="post mb-4 p-4 border w-full border-stone-700 bg-stone-600 rounded-lg text-white">
           <h2><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h2>
           <p class="post-text text-justify flex justify-center m-4"><%= post.text %></p>
           <p class="post-meta flex justify-end items-end">
             <%= t(:likes) %>: <%= post.likes_counter.presence || 0 %>
             <%= t(:comments) %>: <%= post.comments.count %>
           </p>
-          <%= render partial: 'comments', locals: { comments: post.comments } %>
         </div>
       <% end %>
   </div>
+<%= will_paginate @posts, class: "pagination text-2xl font-semibold flex justify-center mt-6 space-x-6 hover:color-red-500" %>
 </div>

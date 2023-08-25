@@ -1,0 +1,15 @@
+<div id="like-button" class="flex items-center space-x-2">
+  <% if @post.liked?(@current_user) %>
+    <%= form_with model: @like, url: user_post_likes_path(user_id: @current_user.id, post_id: @post.id), method: :delete, scope: :like, html: { class: 'like-form' } do |f| %>
+      <%= f.button type: :submit, class: "heart-icon liked" do %>
+        <i class="fas fa-heart text-red-500 text-3xl"></i>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= form_with model: @like, url: user_post_likes_path(user_id: @current_user.id, post_id: @post.id), method: :post, scope: :like, html: { class: 'like-form' } do |f| %>
+      <%= f.button type: :submit, class: "heart-icon" do %>
+        <i class="fas fa-heart text-slate-600 hover:text-red-500 transition duration-300  text-3xl"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

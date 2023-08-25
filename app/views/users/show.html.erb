@@ -2,9 +2,9 @@
 <div class="user-details">
   <%= render partial: 'users/user_info', locals: { user: @user } %>
   </div>
-<div class="user-bio mx-auto my-8 flex flex-col items-center p-4 border border-black">
-<h2 class="bio-heading mb-8"><%= t(:bio) %></h2>
-  <p class="bio-text text-justify font-semibold">
+<div class="user-bio mx-auto my-8 flex flex-col items-center p-4 bg-stone-600 rounded-xl border border-stone-700">
+<h2 class="bio-heading mb-8 text-white"><%= t(:bio) %></h2>
+  <p class="bio-text text-justify font-semibold text-white">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. In odit laudantium maiores deleniti sequi id repudiandae
     perferendis. Odio molestias hic animi voluptate quae, maiores esse excepturi obcaecati illo totam minus!
     Labore velit veniam perferendis repellendus minima nostrum aliquam recusandae pariatur praesentium, quaerat sunt
@@ -17,12 +17,12 @@
   </div>
 
 <div class="user-posts">
-  <% @user.posts.limit(3).each do |post| %>
+<% @user.posts.recent_posts(3).each do |post| %>
     <%= render partial: 'posts/post_item', locals: { post: post, user: @user } %>
   <% end %>
 
-  <div class="see-all-posts mt-4 text-center">
-<%= link_to t(:see_all_posts), user_posts_path(@user), class: "see-more-posts inline-block text-base px-4 py-2 bg-white text-black font-semibold border border-black shadow-md" %>
+  <div class="see-all-posts mt-6 text-center">
+<%= link_to t(:see_all_posts), user_posts_path(@user), class: "bg-gradient-to-r from-green-500 to-green-700 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 hover:no-underline font-semibold" %>
   </div>
 </div>
 

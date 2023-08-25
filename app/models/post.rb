@@ -17,7 +17,11 @@ class Post < ApplicationRecord
     author.decrement!(:posts_counter)
   end
 
-  def recent_comments(limit = 5)
-    comments.order(created_at: :desc).limit(limit)
+  def self.recent_posts(limit = 5)
+    order(created_at: :desc).limit(limit)
+  end
+
+  def liked?(user)
+    !!likes.find { |like| like.author_id == user.id }
   end
 end

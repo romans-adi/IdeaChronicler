@@ -13,7 +13,7 @@
         <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module" %>
       </head>
 
-  <body>
+<body class="min-h-screen bg-cover bg-fixed bg-center bg-no-repeat bg-background-image">
 <% flash.each do |key, message| %>
   <div class="p-4 flex flex-col items-center my-4 rounded-lg
               <% case key.to_s %>
