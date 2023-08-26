@@ -152,9 +152,9 @@ Precompiling assets is essential for improved performance and loading times in a
 rails server
 ```
 
-3. The app will be accessible at `http://localhost:3000` in your web browser.
+5. The app will be accessible at `http://localhost:3000` in your web browser.
 
-4. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
+6. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
 ### Troubleshooting :nut_and_bolt:<a name="troubleshooting"></a>
 
@@ -179,7 +179,7 @@ This ensures that any previously precompiled assets are removed, and new ones wi
 
 ### Tests :heavy_check_mark:<a name="tests"></a>
 
-To run the tests for the Solver class, ensure you are in the directory containing the test files.
+To run the tests for the IdeaChronicler requests and models, ensure you are in the directory containing the test files.
 
 1. Install RSpec:
 
@@ -224,7 +224,6 @@ rspec spec/models/like_spec.rb
   🧑‍🦲 **Romans Š.**
 
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
-- Twitter: [@obj583](https://twitter.com/obj583/)
 - LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
