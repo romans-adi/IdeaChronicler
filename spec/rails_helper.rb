@@ -43,6 +43,8 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
 
+  config.include Rails.application.routes.url_helpers, type: :view
+
   config.before(:each) do
     DatabaseCleaner.start
   end

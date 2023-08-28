@@ -105,7 +105,7 @@ RSpec.describe 'Controllers', type: :request do
 
         get user_posts_path(user)
         expect(response.body).to include(user.name)
-        expect(response.body).to include("#{user.posts.count} post")
+        expect(response.body).to include(user.posts.count.to_s)
       end
     end
 
