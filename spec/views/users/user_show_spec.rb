@@ -27,7 +27,7 @@ RSpec.feature 'User show page', type: :feature do
     expect(page).to have_link(user.name, href: user_path(user))
     expect(page).to have_content("#{user.posts_counter} posts")
     expect(page).to have_link("#{user.posts_counter} posts", href: user_posts_path(user))
-    expect(page).to have_content('Lorem ipsum dolor sit amet consectetur adipisicing elit.')
+    expect(page).to have_content(user.bio.to_s)
     expect(page).not_to have_content(post1.title)
     expect(page).not_to have_content(post3.title)
 
