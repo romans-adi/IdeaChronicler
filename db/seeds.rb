@@ -10,18 +10,23 @@ User.destroy_all
 Post.destroy_all
 Comment.destroy_all
 
-users=[]
+users = []
+
 30.times do |i|
-  User.create(
+  user = User.create(
     name: Faker::Name.name,
     photo: "https://unsplash.com/photos/abcdef",
     bio: Faker::Quote.most_interesting_man_in_the_world,
-    posts_counter: rand(1..40)
+    posts_counter: 0
   )
+  users << user # Push the newly created user into the array
 end
 
 users.each do |user|
-  user.posts_counter.times do |i|
+  num_posts = rand(1..10)
+  user.update(posts_counter: num_posts)
+
+  num_posts.times do
     Post.create(
       author_id: user.id,
       title: Faker::Book.title,
