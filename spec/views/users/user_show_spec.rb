@@ -21,7 +21,6 @@ RSpec.feature 'User show page', type: :feature do
     )
 
     visit user_path(user)
-    puts page.html
 
     expect(page).to have_content(user.name)
     expect(page).to have_link(user.name, href: user_path(user))

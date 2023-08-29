@@ -19,7 +19,7 @@ users = []
     bio: Faker::Quote.most_interesting_man_in_the_world,
     posts_counter: 0
   )
-  users << user # Push the newly created user into the array
+  users << user
 end
 
 users.each do |user|

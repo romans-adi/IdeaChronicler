@@ -58,6 +58,8 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Tests to verify the behavior of controller actions and responses.
 - [x] View templates to render data and user interfaces.
 - [x] Implemented forms for user input and data submission.
+- [x] Integration tests to cover user interactions.
+- [x] Optimized queries to handle n+1 problem.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -219,18 +221,23 @@ rspec spec/models/like_spec.rb
 
 <!-- AUTHORS -->
 
-## 🖋️ Authors<a name="authors"></a>
+## 🖋️ Authors & Contributors<a name="authors"></a>
 
   🧑‍🦲 **Romans Š.**
 
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
 - LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
+  A special thank you to Steven for assisting with integration tests to encompass user interactions
+
+  🧑‍🦲 **Steven Wafeek**
+
+- GitHub: [@StevenWafeek](https://github.com/StevenWafeek)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Write integration tests to cover user interactions and optimize queries.
 - [ ] Integrate Devise gem for user authentication and registration.
 - [ ] Create API endpoints to expose data for external use.
 - [ ] Document API endpoints and usage instructions for developers.
