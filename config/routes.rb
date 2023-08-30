@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    password: 'reset_password',
-    registration: 'signup'
-  }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register'}
 
   devise_scope :user do
     root to: 'devise/sessions#new', as: :login
+    get 'sign_in', to: 'devise/sessions#new'
+    get 'registration', to: 'devise/registrations#new'
+    get 'password', to: 'devise/passwords#new'
+    get 'unlock', to: 'devise/unlocks#new'
+    get 'verification', to 'devise/confirmations#new'
   end
 
   resources :users, only: [:index, :show] do
