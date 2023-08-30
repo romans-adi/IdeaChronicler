@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'registration', to: 'devise/registrations#new'
     get 'password', to: 'devise/passwords#new'
     get 'unlock', to: 'devise/unlocks#new'
-    get 'verification', to 'devise/confirmations#new'
+    get 'verification', to: 'devise/confirmations#new'
   end
 
   resources :users, only: [:index, :show] do
