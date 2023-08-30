@@ -20,6 +20,6 @@ class User < ApplicationRecord
   private
 
   def set_truncated_name
-    self.name = email.split('@').first if name.blank? && email.present?
+    self.name = email.split('@').first.capitalize if name.blank? && email.present?
   end
 end
