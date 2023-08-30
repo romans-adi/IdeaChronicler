@@ -283,6 +283,8 @@ I would like to thank the following individuals and projects for their contribut
 
 [Ruby on Rails](https://rubyonrails.org/): A big thank you to the creators, contributors, and maintainers of the Ruby on Rails framework. Your efforts have empowered countless developers to build powerful and scalable web applications.
 
+[Marek Piwnicki](https://unsplash.com/@marekpiwnicki): Special thanks to Marek Piwnicki for an amazing background image.
+
 <!-- LICENSE -->
 
 ## 📄 License <a name="license"></a>
