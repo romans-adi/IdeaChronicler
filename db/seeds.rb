@@ -6,22 +6,31 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.destroy_all
+Post.destroy_all
+Comment.destroy_all
+
 users = []
+
 30.times do |i|
-  users << User.create(
-    name: "User #{i + 1}",
+  user = User.create(
+    name: Faker::Name.name,
     photo: "https://unsplash.com/photos/abcdef",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    posts_counter: rand(1..10)
+    bio: Faker::Quote.most_interesting_man_in_the_world,
+    posts_counter: 0
   )
+  users << user
 end
 
 users.each do |user|
-  user.posts_counter.times do |i|
+  num_posts = rand(1..10)
+  user.update(posts_counter: num_posts)
+
+  num_posts.times do
     Post.create(
       author_id: user.id,
-      title: "Hello Post #{i + 1} by #{user.name}",
-      text: "Hi",
+      title: Faker::Book.title,
+      text: Faker::Quote.famous_last_words,
       comments_counter: 0,
       likes_counter: 0
     )
@@ -37,6 +46,6 @@ User.all.each do |user|
       )
     end
 
-    post.update(likes_counter: rand(0..20))
+    post.update(likes_counter: rand(0..100))
   end
 end
