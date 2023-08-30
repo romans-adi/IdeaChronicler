@@ -1,5 +1,8 @@
 <header class="bg-transparent">
   <div class="py-8 pr-44 flex space-x-2 justify-end">
+<% if user_signed_in? %>
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "text-white font-semibold rounded-full py-2 px-4 bg-red-600 hover:bg-red-800 hover:no-underline" %>
+<% end %>
     <%= link_to "En", url_for(locale: 'en'), class: "text-white font-semibold rounded-full py-2 px-4 bg-purple-600 hover:bg-purple-800 hover:no-underline" %>
     <%= link_to "Ru", url_for(locale: 'ru'), class: "text-white font-semibold rounded-full py-2 px-4 bg-purple-600 hover:bg-purple-800 hover:no-underline" %>
         <%= link_to "Lv", url_for(locale: 'lv'), class: "text-white font-semibold rounded-full py-2 px-4 bg-purple-600 hover:bg-purple-800 hover:no-underline" %>
