@@ -34,11 +34,12 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   <ul>
      <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
      <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
-     <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
+     <li><a href="https://tailwindcss.com/">Tailwind</a></li>
      <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
      <li><a href="https://rspec.info/">RSpec</a></li>
      <li><a href="https://github.com/teamcapybara/capybara">Capybara</a></li>
      <li><a href="https://github.com/heartcombo/devise">Devise</a></li>
+     <li><a href="https://github.com/CanCanCommunity/cancancan">CanCanCan</a></li>
   </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -63,6 +64,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Integration tests to cover user interactions.
 - [x] Optimized queries to handle n+1 problem.
 - [x] Integrated Devise gem for user authentication and registration.
+- [x] Integrated CanCanCan gem for user authorization (CRUD control).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,7 +143,7 @@ rails db:migrate
 
 This will create the database and apply migrations.
 
-2.1 If you want to populate the database, please, run (this step is not required):
+If you want to populate the database you can run (this step is not required):
 
 ```
 rails db:seed
@@ -174,9 +176,9 @@ rails server
 
 ```
 
-Users need to click on the confirmation link to verify their email address and activate their account. After verifying their email, users can log in and access the application's features.
+  Users need to click on the confirmation link to verify their email address and activate their account. After verifying their email, users can log in and access the application's features.
 
-If you encounter any issues with the email verification process, please refer to the Devise documentation or seek assistance from the Devise community.
+  If you encounter any issues with the email verification process, please refer to the Devise documentation or seek assistance from the Devise community.
 
 7. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
@@ -250,7 +252,7 @@ rspec spec/models/like_spec.rb
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
 - LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
-  A special thank you to Steven for assisting with integration tests to encompass user interactions
+A special thank you to Steven for assisting with integration tests to encompass user interactions
 
   🧑‍🦲 **Steven Wafeek**
 
@@ -262,6 +264,8 @@ rspec spec/models/like_spec.rb
 
 - [ ] Create API endpoints to expose data for external use.
 - [ ] Document API endpoints and usage instructions for developers.
+- [ ] Update the CRUD logic to allow editing of comments and posts.
+- [ ] Fix the logic for the "Create Post" button to make it visible only for the user on their personal page.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

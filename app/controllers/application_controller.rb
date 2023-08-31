@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.confirmed?
-        users_path
+      users_path
     else
       flash[:notice] = 'Please confirm your email before continuing.'
       new_user_session_path

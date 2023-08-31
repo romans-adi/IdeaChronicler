@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post.likes.destroy_all
 
     @post.destroy
-    redirect_to user_posts_path(@user), notice: "Post was successfully deleted."
+    redirect_to user_posts_path(@user), notice: 'Post was successfully deleted.'
   end
 
   def new
