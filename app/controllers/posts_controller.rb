@@ -6,10 +6,23 @@ class PostsController < ApplicationController
   end
 
   def show
+    find_user
     @post = Post.includes(:comments, :likes).find(params[:id])
     @comment = Comment.new
     @current_user = current_user
     @comments = @post.comments
+    authorize! :read, @post
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
+
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+
+    @post.destroy
+    redirect_to root_path, notice: "Post was successfully deleted."
   end
 
   def new

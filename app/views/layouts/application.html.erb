@@ -12,7 +12,7 @@
     <%= javascript_importmap_tags %>
         <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module" %>
           <% if flash[:notice] %>
-    <meta http-equiv="refresh" content="5;url=<%= request.original_url %>">
+    <meta http-equiv="refresh" content="2;url=<%= request.original_url %>">
   <% end %>
       </head>
 

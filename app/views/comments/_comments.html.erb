@@ -2,9 +2,12 @@
   <ul class="list-none">
     <% if @post.comments.any? %>
       <% @post.comments.each do |comment| %>
-        <li>
+        <li class="flex items-center">
           <strong><%= comment.author.name %>:</strong>
-          <%= comment.text %>
+          <p class="ml-2"><%= comment.text %></p>
+          <% if can?(:destroy, comment) %>
+            <%= button_to "X", user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: "Are you sure?" }, class: "ml-4 bg-transparent font-bold hover:text-red-600 text-red-500 text-3xl py-1 px-2 rounded" %>
+          <% end %>
         </li>
       <% end %>
     <% else %>
