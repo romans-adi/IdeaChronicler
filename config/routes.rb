@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     sign_up: 'signup',
     password: 'secret',
     confirmation: 'verification',
-    unlock: 'unblock'
-  }
+    unlock: 'unblock',
+    }
 
   devise_scope :user do
     root to: 'devise/sessions#new', as: :login

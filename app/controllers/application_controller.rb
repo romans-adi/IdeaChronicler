@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :set_locale
 
   def after_sign_in_path_for(resource)
-    user_path(resource)
+    if resource.confirmed?
+      user_path(resource)
+    else
+      flash[:notice] = "Please confirm your email before continuing."
+      new_user_session_path
+    end
   end
 
   def after_sign_out_path_for(resource)

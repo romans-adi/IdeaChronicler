@@ -7,7 +7,7 @@
   <div class="mx-auto mt-8 w-full">
     <div class="flex justify-between items-baseline mb-6" data-controller="modal">
       <%= render 'modal' %>
-      <h1 class="p-4 text-3xl text-gray-900">All Posts</h1>
+      <h1 class="p-4 text-3xl text-white font-semibold">All Posts</h1>
 <%= link_to 'New Post', 'javascript:void(0);', class: "bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 hover:no-underline font-semibold", data: { action: "click->modal#toggleModal", target: "modal.container" } %>
     </div>
 
