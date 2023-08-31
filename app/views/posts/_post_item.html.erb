@@ -1,5 +1,10 @@
 <div class="post mb-4 p-4 border border-stone-800 bg-stone-600 rounded-lg">
+<div class="flex justify-between">
   <h3 class="font-semibold text-white"><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h3>
+  <% if can?(:destroy, post) %>
+    <%= button_to "Delete", user_post_path(@user, post), method: :delete, data: { confirm: "Are you sure?" }, class: "bg-red-500 hover:bg-red-600 text-white text-bold py-2 px-4 rounded self-end" %>
+  <% end %>
+</div>
   <p class="text-white"><%= post.text %></p>
   <p class="post-meta flex justify-end items-end text-white">
 <span class="likes-count mr-2"><%= t(:likes) %>: <%= post.likes_counter.presence || 0 %></span>

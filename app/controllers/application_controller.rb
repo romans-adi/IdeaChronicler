@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, :set_locale
 
+  def current_ability
+    @current_ability ||= Ability.new(current_user)
+  end
+
   def after_sign_in_path_for(resource)
     if resource.confirmed?
-      user_path(resource)
+      users_path
     else
       flash[:notice] = 'Please confirm your email before continuing.'
       new_user_session_path

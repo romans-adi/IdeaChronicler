@@ -13,7 +13,12 @@
 
       <% @posts.each do |post| %>
         <div class="post mb-4 p-4 border w-full border-stone-700 bg-stone-600 rounded-lg text-white">
+          <div class="flex justify-between">
           <h2><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h2>
+            <% if can?(:destroy, @post) %>
+    <%= button_to "Delete", user_post_path(@user, post), method: :delete, data: { confirm: "Are you sure?" }, class: "bg-red-500 hover:bg-red-600 text-white text-bold py-2 px-4 rounded self-end" %>
+  <% end %>
+  </div>
           <p class="post-text text-justify flex justify-center m-4"><%= post.text %></p>
           <p class="post-meta flex justify-end items-end">
             <%= t(:likes) %>: <%= post.likes_counter.presence || 0 %>
