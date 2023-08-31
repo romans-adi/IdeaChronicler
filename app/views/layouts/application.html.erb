@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IdeaChronicler</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag 'tailwind', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <title>IdeaChronicler</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag 'tailwind', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag 'application' %>
-    <%= javascript_importmap_tags %>
-        <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module" %>
-          <% if flash[:notice] %>
+  <%= javascript_importmap_tags %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module" %>
+  <% if flash[:notice] || flash[:success] || flash[:error] %>
     <meta http-equiv="refresh" content="2;url=<%= request.original_url %>">
   <% end %>
-      </head>
+</head>
 
 <body class="min-h-screen bg-cover bg-fixed bg-center bg-no-repeat bg-background-image">
 <% flash.each do |key, message| %>
