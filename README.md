@@ -137,10 +137,15 @@ To run this project locally, follow these steps:
 ```
 rails db:create
 rails db:migrate
-rails db:seed
 ```
 
-This will create the database, apply migrations, and populate the database with sample data.
+This will create the database and apply migrations.
+
+2.1 If you want to populate the database, please, run (this step is not required):
+
+```
+rails db:seed
+```
 
 3. To precompile assets for production deployment, execute the following command:
 
