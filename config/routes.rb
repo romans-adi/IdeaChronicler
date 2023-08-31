@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     password: 'secret',
     confirmation: 'verification',
     unlock: 'unblock',
-    }
+  }
 
   devise_scope :user do
     root to: 'devise/sessions#new', as: :login
@@ -18,10 +18,22 @@ Rails.application.routes.draw do
   end
 
   root 'users#index'
+
   resources :users, only: %i[index show] do
     resources :posts, only: %i[index show new create destroy] do
       resources :comments, only: %i[new create destroy]
       resources :likes, only: [:create]
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [] do
+        resources :posts, only: [:index]
+      end
+      resources :posts, only: [] do
+        resources :comments, only: [:index, :create]
+      end
     end
   end
 end
