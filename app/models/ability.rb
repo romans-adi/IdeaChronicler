@@ -2,15 +2,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Post
-
-    if user.present?
+    user ||= current_user
+    if user.role == 'admin'
+      can :manage, :all
+    else
+      can :read, :all
+      can :create, [Post, Comment]
+      can :update, [Post, Comment], author_id: user.id
       can :destroy, Post, author_id: user.id
       can :destroy, Comment, author_id: user.id
-
-      if user.admin?
-        can :destroy, Comment
-      end
     end
   end
 end
