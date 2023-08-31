@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
     if resource.confirmed?
       user_path(resource)
     else
-      flash[:notice] = "Please confirm your email before continuing."
+      flash[:notice] = 'Please confirm your email before continuing.'
       new_user_session_path
     end
   end
 
-  def after_sign_out_path_for(resource)
+  def after_sign_out_path_for(_resource)
     root_path
   end
 
