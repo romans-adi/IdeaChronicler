@@ -37,6 +37,8 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
      <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
      <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
      <li><a href="https://rspec.info/">RSpec</a></li>
+     <li><a href="https://github.com/teamcapybara/capybara">Capybara</a></li>
+     <li><a href="https://github.com/heartcombo/devise">Devise</a></li>
   </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -60,7 +62,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Implemented forms for user input and data submission.
 - [x] Integration tests to cover user interactions.
 - [x] Optimized queries to handle n+1 problem.
-
+- [x] Integrated Devise gem for user authentication and registration.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,10 +137,15 @@ To run this project locally, follow these steps:
 ```
 rails db:create
 rails db:migrate
-rails db:seed
 ```
 
-This will create the database, apply migrations, and populate the database with sample data.
+This will create the database and apply migrations.
+
+2.1 If you want to populate the database, please, run (this step is not required):
+
+```
+rails db:seed
+```
 
 3. To precompile assets for production deployment, execute the following command:
 
@@ -156,7 +163,22 @@ rails server
 
 5. The app will be accessible at `http://localhost:3000` in your web browser.
 
-6. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
+6. When a user signs up, Devise will automatically send a confirmation email with a verification link. You can find the confirmation link in the Rails logs. For example:
+
+```
+<p>Welcome john@mail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/verification?confirmation_token=T8CsCpr_YbMGSjZ7sUgz">Confirm my account</a></p>
+
+```
+
+Users need to click on the confirmation link to verify their email address and activate their account. After verifying their email, users can log in and access the application's features.
+
+If you encounter any issues with the email verification process, please refer to the Devise documentation or seek assistance from the Devise community.
+
+7. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
 ### Troubleshooting :nut_and_bolt:<a name="troubleshooting"></a>
 
@@ -238,7 +260,6 @@ rspec spec/models/like_spec.rb
 
 ## 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Integrate Devise gem for user authentication and registration.
 - [ ] Create API endpoints to expose data for external use.
 - [ ] Document API endpoints and usage instructions for developers.
 
@@ -282,6 +303,8 @@ I would like to thank the following individuals and projects for their contribut
 [Ruby official](https://www.ruby-lang.org/) :  Special thanks to Yukihiro Matsumoto, the creator of the Ruby programming language, for giving me this powerful and elegant tool to build amazing applications. I am also grateful to the Ruby Core Team and the passionate Ruby community for their continuous support and contributions.
 
 [Ruby on Rails](https://rubyonrails.org/): A big thank you to the creators, contributors, and maintainers of the Ruby on Rails framework. Your efforts have empowered countless developers to build powerful and scalable web applications.
+
+[Marek Piwnicki](https://unsplash.com/@marekpiwnicki): Special thanks to Marek Piwnicki for an amazing background image.
 
 <!-- LICENSE -->
 

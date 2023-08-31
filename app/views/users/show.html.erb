@@ -2,11 +2,15 @@
 <div class="user-details">
   <%= render partial: 'users/user_info', locals: { user: @user } %>
   </div>
-<div class="user-bio mx-auto my-8 flex flex-col items-center p-4 bg-stone-600 rounded-xl border border-stone-700">
+<div class="user-bio my-8 flex flex-col items-center p-4 bg-stone-600 rounded-xl border border-stone-700 w-1/2 self-start">
 <h2 class="bio-heading mb-8 text-white"><%= t(:bio) %></h2>
-  <p class="bio-text text-justify font-semibold text-white">
-       <%= @user.bio %>
-   </p>
+<p class="bio-text text-justify font-semibold text-white">
+  <% if @user.bio.present? %>
+    <%= @user.bio %>
+  <% else %>
+    No bio yet
+  <% end %>
+</p>
   </div>
 
 <div class="user-posts">

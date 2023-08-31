@@ -2,13 +2,21 @@
   <h1 class="post-title text-2xl font-bold text-white"><%= @post.title %></h1>
   <div class="post-content mt-4 text-center">
     <p class="text-white"><%= @post.text %></p>
-<div class="flex justify-end gap-4">
-  <div class="flex flex-col items-center">
-    <%= render 'likes/button_like' %>
-    <div class="text-white" id="likes-count">
-      <p><strong>Romans</strong> and <%= @post.likes_counter %> others liked this</p>
-    </div>
-    </div>
+    <div class="flex justify-end gap-4">
+      <div class="flex flex-col items-center">
+        <%= render 'likes/button_like' %>
+<div class="text-white" id="likes-count">
+<% if @post.likes_counter > 1 %>
+  <p><strong><%= @post.likes.first.author.name %></strong> and <%= @post.likes_counter - 1 %> others liked this</p>
+<% elsif @post.likes_counter == 1 %>
+  <p><strong><%= @post.likes.first.author.name %></strong> liked this</p>
+<% elsif @post.likes_counter == 0 && !@post.likes.map(&:author).include?(@user) %>
+  <p>Not liked yet</p>
+<% end %>
+
+</div>
+
+      </div>
     </div>
     <%= render partial: 'comments/comments', locals: { comments: @post.comments } %>
     <%= render 'comments/comment_modal' %>
@@ -17,3 +25,4 @@
     </div>
   </div>
 </div>
+

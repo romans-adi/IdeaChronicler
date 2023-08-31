@@ -1,15 +1,25 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
-  before_action :set_locale, :set_current_user
+  before_action :authenticate_user!, :set_locale
 
-  def current_user
-    @current_user ||= User.first
+  def after_sign_in_path_for(resource)
+    if resource.confirmed?
+      user_path(resource)
+    else
+      flash[:notice] = 'Please confirm your email before continuing.'
+      new_user_session_path
+    end
   end
 
-  private
+  def after_sign_out_path_for(_resource)
+    root_path
+  end
 
-  def set_current_user
-    @current_user = current_user
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[email password password_confirmation])
   end
 
   def set_locale
