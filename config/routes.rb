@@ -31,11 +31,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [] do
-        resources :posts, only: [:index]
-      end
-      resources :posts, only: [] do
-        resources :comments, only: [:index, :create]
+      resources :users do
+        resources :posts do
+          resources :comments
+          resources :likes
+        end
       end
     end
   end
