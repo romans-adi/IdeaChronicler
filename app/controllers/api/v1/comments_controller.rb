@@ -8,7 +8,7 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
   end
 
   def show
-    render json: @commment
+    render json: @comment
   end
 
   def create
@@ -23,6 +23,7 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
       render json: @comment.errors, status: :unprocessable_entity
     end
   end
+
   def update
     if @comment.update(comment_params)
       render json: @comment
