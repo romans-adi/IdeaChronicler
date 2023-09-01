@@ -1,32 +1,47 @@
-module Api
-  module V1
-    class CommentsController < ApplicationController
-      skip_before_action :verify_authenticity_token, only: [:create]
+class Api::V1::CommentsController < Api::V1::ApplicationController
+  before_action :set_comment, only: %i[show update destroy]
 
-      def index
-        @post = Post.find(params[:post_id])
-        @comments = @post.comments
-        render json: @comments
-      end
+  def index
+    @comments = Comment.where(post_id: params[:post_id])
 
-      def create
-        @post = Post.find(params[:post_id])
-        @default_user = User.find_by(email: 'romans.spilaks@gmail.com')
-        @default_user ||= User.create(email: 'romans.spilaks@gmail.com', password: '123456')
-        @comment = @post.comments.new(comment_params)
-        @comment.author = @default_user
+    render json: @comments, only: %i[id text]
+  end
 
-        if @comment.save
-          render json: @comment, status: :created
-        else
-          logger.error(@comment.errors.full_messages.join(", "))
-          render json: { error: 'Failed to add comment' }, status: :unprocessable_entity
-        end
-      end
+  def show
+    render json: @commment
+  end
 
-      def comment_params
-        params.require(:comment).permit(:text, :author)
-      end
+  def create
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
+    @comment.author = @user
+
+    if @comment.save
+      render json: @comment, status: :created, location: api_v1_user_post_comment_url(@user, @post, @comment)
+    else
+      render json: @comment.errors, status: :unprocessable_entity
     end
+  end
+  def update
+    if @comment.update(comment_params)
+      render json: @comment
+    else
+      render json: @comment.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @comment.destroy
+  end
+
+  private
+
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:id, :text)
   end
 end
