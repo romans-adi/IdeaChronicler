@@ -18,6 +18,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
   - [Setup](#setup) 🔧
   - [Installation](#installation) ⚙️
   - [Usage](#usage) 🧰
+  - [API](#api) :end:
   - [Tests](#tests) :heavy_check_mark:
   - [Troubleshooting](#troubleshooting) :nut_and_bolt:
 - [Authors](#authors) 🖋️
@@ -40,6 +41,8 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
      <li><a href="https://github.com/teamcapybara/capybara">Capybara</a></li>
      <li><a href="https://github.com/heartcombo/devise">Devise</a></li>
      <li><a href="https://github.com/CanCanCommunity/cancancan">CanCanCan</a></li>
+     <li><a href=https://jwt.io/">JWT</a></li>
+     <li><a href="https://github.com/rswag/rswag">rswag</a></li>
   </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -65,6 +68,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Optimized queries to handle n+1 problem.
 - [x] Integrated Devise gem for user authentication and registration.
 - [x] Integrated CanCanCan gem for user authorization (CRUD control).
+- [x] API endpoints to expose data for external use with instructions for developers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,7 +186,63 @@ rails server
 
 7. If you have future features like GUI or interactive mode, follow the specific instructions provided for those features in the app's documentation.
 
+### API :end: <a name="api"></a>
+
+The IdeaChronicler API allows you to interact with user data, posts, and comments. You can use this API to retrieve information about users, posts, and comments, as well as create new users and comments.
+
+How to Use:
+
+Start your local server by running
+```
+rails s
+```
+
+Access the API documentation at
+
+```
+http://localhost:3000/api-docs/
+```
+
+
+You will find four main API requests:
+
+```
+List of Users: Retrieve a list of users.
+Endpoint: /api/v1/users
+Method: GET
+```
+
+```
+Create User: Create a new user.
+Endpoint: /api/v1/users
+Method: POST
+Request Body: JSON with name and email fields.
+```
+
+```
+List of Posts: Retrieve a list of posts.
+Endpoint: /api/v1/posts
+Method: GET
+```
+
+```
+List of Comments: Retrieve a list of comments.
+Endpoint: /api/v1/comments
+Method: GET
+```
+
+To try out these requests, use the provided API documentation at http://localhost:3000/api-docs/. You can make requests directly from the documentation interface.
+
+Make sure to include the required request parameters, such as the request body for creating a new user or comment, and review the expected responses.
+
+Experiment and interact with the API to understand its functionality better.
+
+Note: Ensure that you have the Rails server running locally, and you can access the API documentation through the provided link. This documentation will guide you on how to use the API and test its endpoints effectively.
+
+
 ### Troubleshooting :nut_and_bolt:<a name="troubleshooting"></a>
+
+#### Rendering
 
 If you encounter any issues related to missing assets or unexpected behavior after making changes, try the following steps:
 
@@ -201,7 +261,29 @@ rm -rf public/assets/
 ```
 This ensures that any previously precompiled assets are removed, and new ones will be generated during the next precompilation.
 
-3. If problems persist, you can refer to the official [Ruby on Rails Guides](https://guides.rubyonrails.org/getting_started.html) for more troubleshooting tips and guidance.
+#### Database
+
+ If you encounter any problems related to data or database inconsistencies, you can follow these steps to reset your database:
+
+1. Ensure Server/Process Shutdown: Make sure that your Rails server or any related processes are not running. You should not have any active connections to the database.
+
+2. Drop the Database:
+
+```
+rake db:drop
+```
+
+or
+
+```
+rails db:drop
+```
+
+3. Recreate the Database [how to](#usage)
+
+After dropping the database, you can recreate it from scratch. Run migrations to set up the schema.
+
+If problems persist, you can refer to the official [Ruby on Rails Guides](https://guides.rubyonrails.org/getting_started.html) for more troubleshooting tips and guidance.
 
 ### Tests :heavy_check_mark:<a name="tests"></a>
 
@@ -252,7 +334,7 @@ rspec spec/models/like_spec.rb
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
 - LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
-A special thank you to Steven for assisting with integration tests to encompass user interactions
+A special thank you to Steven for assisting with integration tests to encompass user interactions and creating API requests
 
   🧑‍🦲 **Steven Wafeek**
 
@@ -262,8 +344,8 @@ A special thank you to Steven for assisting with integration tests to encompass 
 
 ## 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Create API endpoints to expose data for external use.
-- [ ] Document API endpoints and usage instructions for developers.
+- [ ] Improve API documentation
+- [ ] Improve authentication
 - [ ] Update the CRUD logic to allow editing of comments and posts.
 - [ ] Fix the logic for the "Create Post" button to make it visible only for the user on their personal page.
 

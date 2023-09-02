@@ -1,5 +1,5 @@
 require 'capybara/rspec'
-require 'webdrivers'
+require 'selenium-webdriver'
 
 Capybara.register_driver :selenium_firefox do |app|
   options = Selenium::WebDriver::Firefox::Options.new
