@@ -64,14 +64,14 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
+gem 'devise-jwt'
+gem 'fast_jsonapi'
+gem 'rack-cors'
+gem 'rswag'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
-
-  gem 'devise-jwt'
-  gem 'fast_jsonapi'
-  gem 'rack-cors'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

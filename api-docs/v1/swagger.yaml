@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  title: IdeaChronicler API
+  version: 1.0.0
+paths:
+  /api/v1/users:
+    get:
+      summary: Retrieve a list of users
+      tags:
+        - Users
+      responses:
+        '200':
+          description: List of users retrieved
+          content:
+            application/json:
+              example:
+                - id: 1
+                  name: John Doe
+                - id: 2
+                  name: Jane Smith
+    post:
+      summary: Create a new user
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+              required:
+                - name
+                - email
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              example:
+                id: 3
+                name: New User
+                email: newuser@example.com
+  /api/v1/posts:
+    get:
+      summary: Retrieve a list of posts
+      tags:
+        - Posts
+      responses:
+        '200':
+          description: List of posts retrieved
+          content:
+            application/json:
+              example:
+                - id: 1
+                  title: Post 1
+                  text: This is the first post
+                - id: 2
+                  title: Post 2
+                  text: This is the second post
+  /api/v1/comments:
+    get:
+      summary: Retrieve a list of comments
+      tags:
+        - Comments
+      responses:
+        '200':
+          description: List of comments retrieved
+          content:
+            application/json:
+              example:
+                - id: 1
+                  text: Comment 1
+                - id: 2
+                  text: Comment 2
+    post:
+      summary: Create a new comment
+      tags:
+        - Comments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '201':
+          description: Comment created
+          content:
+            application/json:
+              example:
+                id: 3
+                text: New comment

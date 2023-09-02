@@ -9,17 +9,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
-  config.jwt do |jwt|
-    jwt.secret = "qx+ZnuZqUCXPEyBpq/OscAnbLslex56eC9zAkQ3YezKeOFKaVr6sdEscjUhGtYdzY2O+0b99g2wIw+g9XZbXAWDIy88PW6+euXgxO7QvH8KcTOdWbipFxYBuMmpOO6KZ0DYq6lKjry46Iy5+4J5qVcXH/FNSgL8zC7UhRcR/GwPSbOGPZfrS8vT6nSJZMUrQDKwpeTd1O7lrwKn+DyTkPvBwwFTQfgqxLBQw6Jg54XrRqcD7cebiCM+DpoGTdfgTVPBqeDQDGGBNDW1qmAWSNItknuhB43s16h0I+u9GdD9TCbN32lrRtOggkSRBPUWk/5CXUMVlhW/PoYHqQhly9dxd0I4+JbNBViXxusrJ5tSJZOBp8eYHex803cG5R44929hJRV+bXwfNe0tlOYG9ZmmML8Aqvehd97y/--cg301Ie1Rk2yB7ED--BDMxEnDSqd8qMgoCftj3lQ=="
-    jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]
-    ]
-    jwt.expiration_time = 360.minutes.to_i
-end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
