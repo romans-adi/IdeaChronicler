@@ -119,8 +119,6 @@ GEM
     erubi (1.12.0)
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
-    fast_jsonapi (1.5)
-      activesupport (>= 4.2)
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
@@ -336,10 +334,10 @@ DEPENDENCIES
   devise
   devise-jwt
   faker
-  fast_jsonapi
   font-awesome-sass (~> 6.4.2)
   importmap-rails
   jbuilder
+  jwt
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors

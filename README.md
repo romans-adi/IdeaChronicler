@@ -203,6 +203,36 @@ Access the API documentation at
 http://localhost:3000/api-docs/
 ```
 
+To have a permission for using API requests you must be a registered and verified. To receive a token for permit to use API you must send a POST request using endpoint
+
+```
+http://localhost:3000/api/v1/auth/login
+```
+
+Request must contain you login and password in body.
+
+In response body you'll receive an authorization token which you can use for your next requests.
+
+Example of response:
+
+```
+{"token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE2OTQzNjgwMTN9.FeDwYMzJe4zTSJjNQgIdYtyzQYPJ-nZ6GXPTJx6TqLw"}
+```
+
+After you received token, you must specify it in header with a name "Authorization" as a key and use your token as value.
+Example CURL request:
+```
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_AUTH_TOKEN" \
+  -d '{
+    "comment": {
+      "text": "This is your comment text."
+    }
+  }' \
+  http://localhost:3000/api/v1/users/USER_ID/posts/POST_ID/comments
+```
+
 
 You will find four main API requests:
 
