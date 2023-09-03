@@ -11,6 +11,9 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'jwt'
+gem 'devise-jwt'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -65,7 +68,6 @@ group :development, :test do
   gem 'rspec-rails'
 end
 gem 'devise-jwt'
-gem 'fast_jsonapi'
 gem 'rack-cors'
 gem 'rswag'
 

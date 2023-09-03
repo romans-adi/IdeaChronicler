@@ -1,10 +1,8 @@
 class User < ApplicationRecord
-  include Devise::JWT::RevocationStrategies::JTIMatcher
   before_save :set_truncated_name
   before_create :set_default_role
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable,
-         :jwt_authenticatable, jwt_revocation_strategy: self
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
 
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
@@ -13,14 +11,6 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: :author_id
 
   ROLES = %w[user admin].freeze
-
-  def jwt_payload
-    super.merge('jti' => SecureRandom.uuid)
-  end
-
-  def admin?
-    role == 'user'
-  end
 
   def recent_posts(limit = 3)
     posts.order(created_at: :desc).limit(limit)

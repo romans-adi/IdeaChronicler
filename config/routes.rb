@@ -8,10 +8,7 @@ Rails.application.routes.draw do
     password: 'secret',
     confirmation: 'verification',
     unlock: 'unblock',
-  },
-  controllers: { sessions: 'custom_sessions' }
-
-  delete 'logout', to: 'custom_sessions#destroy', as: :logout
+  }
 
   devise_scope :user do
     root to: 'devise/sessions#new', as: :login
