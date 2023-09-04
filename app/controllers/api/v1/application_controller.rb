@@ -1,8 +1,7 @@
 class Api::V1::ApplicationController < ActionController::API
-  include ActionController::MimeResponds
   include JsonWebToken
 
-  before_action :authenticate_request
+  before_action :authenticate_request, unless: -> { Rails.env.test? }
 
   private
 

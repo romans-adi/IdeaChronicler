@@ -1,7 +1,6 @@
-# spec/integration/api/v1/list_comments_spec.rb
 require 'swagger_helper'
 
-describe 'List All Comments for a User\'s Post' do
+RSpec.describe 'List All Comments for a User\'s Post', type: :request do
   path '/api/v1/users/{user_id}/posts/{post_id}/comments' do
     get 'Retrieves a list of comments for a user\'s post' do
       tags 'Comments'
@@ -10,10 +9,11 @@ describe 'List All Comments for a User\'s Post' do
       parameter name: :post_id, in: :path, type: :string, required: true, description: 'Post ID'
 
       response '200', 'List of comments retrieved' do
+        let(:user_id) { '123' }
+        let(:post_id) { '123' }
         run_test! do
-          # Create a user, a post, and comments manually for testing
-          user = User.create(name: 'Test User', bio: 'Test Bio', email: 'test@example.com')
-          post = Post.create(title: 'Test Post Title', text: 'Test Post Text', author: user)
+          user = User.create(name: 'Test User', email: 'test@example.com', password: 'password')
+          post = Post.create(title: 'Post 1', text: 'This is post 1', author: user)
           Comment.create(text: 'Test Comment 1', post:, author: user)
           Comment.create(text: 'Test Comment 2', post:, author: user)
 

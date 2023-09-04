@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, unless: -> { request.format.json? }
+  before_action :authenticate_user!
 
   def index
     @users = User.includes(posts: %i[comments likes]).all
