@@ -203,24 +203,26 @@ Access the API documentation at
 http://localhost:3000/api-docs/
 ```
 
-To have a permission for using API requests you must be a registered and verified. To receive a token for permit to use API you must send a POST request using endpoint
+To gain permission for using API requests, you must be registered and verified. To receive a token permitting API usage, you need to send a POST request using the following endpoint:
 
 ```
 http://localhost:3000/api/v1/auth/login
 ```
 
-Request must contain you login and password in body.
+The request must include your login and password in the request body.
 
-In response body you'll receive an authorization token which you can use for your next requests.
+In the response body, you will receive an authorization token, which you can use for subsequent requests.
 
-Example of response:
+Example response:
 
 ```
 {"token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE2OTQzNjgwMTN9.FeDwYMzJe4zTSJjNQgIdYtyzQYPJ-nZ6GXPTJx6TqLw"}
 ```
 
-After you received token, you must specify it in header with a name "Authorization" as a key and use your token as value.
+Once you've received the token, you must specify it in the header with the name "Authorization" as the key and use your token as the value.
+
 Example CURL request:
+
 ```
 curl -X POST \
   -H "Content-Type: application/json" \
@@ -234,7 +236,7 @@ curl -X POST \
 ```
 
 
-You will find four main API requests:
+You will find five main API requests:
 
 ```
 List of Users: Retrieve a list of users.
@@ -246,7 +248,7 @@ Method: GET
 Create User: Create a new user.
 Endpoint: /api/v1/users
 Method: POST
-Request Body: JSON with name and email fields.
+Request Body: JSON with email, password and password confirmation (same as password) fields.
 ```
 
 ```
@@ -265,7 +267,7 @@ To try out these requests, use the provided API documentation at http://localhos
 
 Make sure to include the required request parameters, such as the request body for creating a new user or comment, and review the expected responses.
 
-Experiment and interact with the API to understand its functionality better.
+Experiment and interact with the API to better understand its functionality.
 
 Note: Ensure that you have the Rails server running locally, and you can access the API documentation through the provided link. This documentation will guide you on how to use the API and test its endpoints effectively.
 
