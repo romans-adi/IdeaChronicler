@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale, :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :null_session
-  before_action :set_locale
 
   def current_ability
     @current_ability ||= Ability.new(current_user)
@@ -17,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(_resource)
-    root_path
+    new_user_session_path
   end
 
   protected

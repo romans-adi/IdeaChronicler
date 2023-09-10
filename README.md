@@ -69,6 +69,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Integrated Devise gem for user authentication and registration.
 - [x] Integrated CanCanCan gem for user authorization (CRUD control).
 - [x] API endpoints to expose data for external use with instructions for developers
+- [X] Token authentication with JWT
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -203,8 +204,40 @@ Access the API documentation at
 http://localhost:3000/api-docs/
 ```
 
+To gain permission for using API requests, you must be registered and verified. To receive a token permitting API usage, you need to send a POST request using the following endpoint:
 
-You will find four main API requests:
+```
+http://localhost:3000/api/v1/auth/login
+```
+
+The request must include your login and password in the request body.
+
+In the response body, you will receive an authorization token, which you can use for subsequent requests.
+
+Example response:
+
+```
+{"token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE2OTQzNjgwMTN9.FeDwYMzJe4zTSJjNQgIdYtyzQYPJ-nZ6GXPTJx6TqLw"}
+```
+
+Once you've received the token, you must specify it in the header with the name "Authorization" as the key and use your token as the value.
+
+Example CURL request:
+
+```
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_AUTH_TOKEN" \
+  -d '{
+    "comment": {
+      "text": "This is your comment text."
+    }
+  }' \
+  http://localhost:3000/api/v1/users/USER_ID/posts/POST_ID/comments
+```
+
+
+You will find five main API requests:
 
 ```
 List of Users: Retrieve a list of users.
@@ -216,7 +249,7 @@ Method: GET
 Create User: Create a new user.
 Endpoint: /api/v1/users
 Method: POST
-Request Body: JSON with name and email fields.
+Request Body: JSON with email, password and password confirmation (same as password) fields.
 ```
 
 ```
@@ -235,7 +268,7 @@ To try out these requests, use the provided API documentation at http://localhos
 
 Make sure to include the required request parameters, such as the request body for creating a new user or comment, and review the expected responses.
 
-Experiment and interact with the API to understand its functionality better.
+Experiment and interact with the API to better understand its functionality.
 
 Note: Ensure that you have the Rails server running locally, and you can access the API documentation through the provided link. This documentation will guide you on how to use the API and test its endpoints effectively.
 
@@ -345,7 +378,6 @@ A special thank you to Steven for assisting with integration tests to encompass 
 ## 🌟 Future Features <a name="future-features"></a>
 
 - [ ] Improve API documentation
-- [ ] Improve authentication
 - [ ] Update the CRUD logic to allow editing of comments and posts.
 - [ ] Fix the logic for the "Create Post" button to make it visible only for the user on their personal page.
 

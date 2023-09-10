@@ -30,7 +30,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users do
+      post '/users', to: 'users#create'
+      post '/login', to: 'authentication#login'
+      resources :users, only: %i[index create show] do
         resources :posts do
           resources :comments
           resources :likes

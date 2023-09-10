@@ -1,7 +1,16 @@
-# spec/integration/api/v1/add_comment_spec.rb
 require 'swagger_helper'
 
-describe 'Add a Comment to a Post' do
+RSpec.describe 'Add a Comment to a Post', type: :request do
+  let(:user_id) { 2 }
+  let(:user) { User.create(id: 2, name: 'Test User', email: 'test@example.com', password: 'password') }
+  let(:article) { Post.create(id: 2, title: 'Post 1', text: 'This is post 1', author_id: user_id) }
+  let(:post_id) { article.id }
+  let(:comment) { { text: 'Your comment text here' } }
+
+  before do
+    allow_any_instance_of(Api::V1::CommentsController).to receive(:current_user).and_return(user)
+  end
+
   path '/api/v1/users/{user_id}/posts/{post_id}/comments' do
     post 'Creates a new comment for a user\'s post' do
       tags 'Comments'
@@ -18,13 +27,8 @@ describe 'Add a Comment to a Post' do
 
       response '201', 'Comment created' do
         run_test! do
-          # Create a user and a post manually for testing
-          user = User.create(name: 'Test User', bio: 'Test Bio', email: 'test@example.com')
-          post = Post.create(title: 'Test Post Title', text: 'Test Post Text', author: user)
-
-          # Create a comment manually for testing
           comment_params = { text: 'Your comment text here' }
-          post "/api/v1/users/#{user.id}/posts/#{post.id}/comments",
+          post "/api/v1/users/#{user_id}/posts/#{post_id}/comments",
                params: { comment: comment_params }.to_json,
                headers: {
                  'Content-Type' => 'application/json',

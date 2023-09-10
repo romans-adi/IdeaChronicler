@@ -12,7 +12,6 @@ gem 'devise'
 gem 'faker'
 
 gem 'jwt'
-gem 'devise-jwt'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

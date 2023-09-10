@@ -25,8 +25,17 @@ RSpec.configure do |config|
 
   config.include Rails.application.routes.url_helpers, type: :view
 
+  config.before(:each, type: :request) do
+    # Stub email confirmation to prevent actual email delivery
+    allow_any_instance_of(User).to receive(:send_confirmation_instructions).and_return(true)
+  end
+
   config.before(:each) do
     DatabaseCleaner.start
+  end
+
+  config.define_derived_metadata(file_path: Regexp.new('/spec/requests/')) do |metadata|
+    metadata[:type] = :request
   end
 
   config.after(:each) do
