@@ -69,6 +69,7 @@ The "Idea Chronicler" project is a blog application that serves as a classic exa
 - [x] Integrated Devise gem for user authentication and registration.
 - [x] Integrated CanCanCan gem for user authorization (CRUD control).
 - [x] API endpoints to expose data for external use with instructions for developers
+- [X] Token authentication with JWT
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -377,7 +378,6 @@ A special thank you to Steven for assisting with integration tests to encompass 
 ## 🌟 Future Features <a name="future-features"></a>
 
 - [ ] Improve API documentation
-- [ ] Improve authentication
 - [ ] Update the CRUD logic to allow editing of comments and posts.
 - [ ] Fix the logic for the "Create Post" button to make it visible only for the user on their personal page.
 
